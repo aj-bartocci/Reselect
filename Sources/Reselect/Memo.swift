@@ -135,7 +135,7 @@ class MemoizedState<State, Input, Output, Cache: MemoCacheable>: MemoRepresentab
     let cachePolicy: MemoCachePolicy
     
     init(
-        sharedCache: Cache = MemoCache.shared,
+        sharedCache: Cache,
         cachePolicy: MemoCachePolicy,
         input: @escaping (State) -> Input,
         equalityCheck: @escaping (Input, Input) -> Bool,

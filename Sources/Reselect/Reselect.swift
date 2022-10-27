@@ -11,6 +11,7 @@ public func createSelector<
     map: @escaping (Slice) -> Output
 ) -> Memo<Input, Output> {
     return Memo(MemoizedState(
+        sharedCache: MemoCache.shared,
         cachePolicy: cachePolicy,
         input: slice,
         equalityCheck: equalityCheck,
